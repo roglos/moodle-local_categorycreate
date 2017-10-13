@@ -121,7 +121,7 @@ if ($hassiteconfig) {
 
     // Table name.
     $settings->add(new admin_setting_configtext('local_categorycreate/remotetable1',
-        get_string('remotetableccatlev', 'local_categorycreate'),
+        get_string('remotetablecatlev', 'local_categorycreate'),
         get_string('remotetablecatlev_desc', 'local_categorycreate'), ''));
     $settings->add(new admin_setting_configtext('local_categorycreate/remotetable2',
         get_string('remotetablecats', 'local_categorycreate'),

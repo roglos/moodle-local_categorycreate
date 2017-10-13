@@ -87,7 +87,7 @@ class categorycreate extends \core\task\scheduled_task {
         $levels = array();
 
         // Read data from table1.
-        $sql = $this->db_get_sql($table, array(), array(), true);
+        $sql = $this->db_get_sql($table, array(), array(), true, "rank");
         if ($rs = $extdb->Execute($sql)) {
             if (!$rs->EOF) {
                 while ($fields = $rs->FetchRow()) {
