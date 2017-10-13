@@ -64,13 +64,13 @@ class categorycreate extends \core\task\scheduled_task {
             echo 'Table1 not defined.<br>';
             return 0;
         } else {
-            echo 'Table: ' . $this->get_config('remotetable1') . '<br>';
+            echo 'Table: ' . $this->get_config('remotetablecatlev') . '<br>';
         }
         if (!$this->get_config('remotetable2')) {
             echo 'Table1 not defined.<br>';
             return 0;
         } else {
-            echo 'Table: ' . $this->get_config('remotetable2') . '<br>';
+            echo 'Table: ' . $this->get_config('remotetablecats') . '<br>';
         }
 
         echo 'Starting connection...<br>';
@@ -83,7 +83,7 @@ class categorycreate extends \core\task\scheduled_task {
 
         // EXTERNAL DB - TABLE1: Category levels.
         // Get external table name.
-        $table = $this->get_config('remotetable1');
+        $table = $this->get_config('remotetablecatlev');
         $levels = array();
 
         // Read data from table1.
@@ -112,7 +112,7 @@ class categorycreate extends \core\task\scheduled_task {
 
                 // EXTERNAL DB - TABLE2: Categories list.
                 // Get external table name.
-                $table2 = $this->get_config('remotetable2');
+                $table2 = $this->get_config('remotetable2cats');
 
                 // Read data from table2.
                 $sql2 = $this->db_get_sql_like($table2, array("category_idnumber" => $level), array(), true);

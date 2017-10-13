@@ -44,8 +44,8 @@ $string['debugdb'] = 'Debug ADOdb';
 $string['debugdb_desc'] = 'Debug ADOdb connection to external database - use when getting empty page during login. Not suitable for production sites!';
 
 $string['settingsheaderremote'] = 'External database tables and fields';
-$string['remotetable'] = 'Remote table';
-$string['remotetable_desc'] = 'Specify of the name of the table to be used. By default this plugin will read all fields (SELECT * FROM tablename)';
-$string['newfield1'] = 'New field 1';
-$string['newfield2'] = 'New field 2';
+$string['remotetablecatlev'] = 'Remote table';
+$string['remotetablecatlev_desc'] = 'Specify of the name of the table to be used. By default this plugin will read all fields (SELECT * FROM tablename)';
+$string['remotetablecats'] = 'Remote table';
+$string['remotetablecats_desc'] = 'Specify of the name of the table to be used. By default this plugin will read all fields (SELECT * FROM tablename)';
 
