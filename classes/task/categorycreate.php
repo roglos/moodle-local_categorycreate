@@ -100,7 +100,7 @@ class categorycreate extends \core\task\scheduled_task {
         } else {
             // Report error if required.
             $extdb->Close();
-            echo 'Error reading data from the external course table<br>';
+            echo 'Error reading data from the external catlevel table<br>';
             return 4;
         }
 
@@ -189,7 +189,7 @@ class categorycreate extends \core\task\scheduled_task {
                 } else {
                     // Report error if required.
                     $extdb->Close();
-                    echo 'Error reading data from the external course table<br>';
+                    echo 'Error reading data from the external categories table<br>';
                     return 4;
                 }
             } else {
