@@ -60,13 +60,13 @@ class categorycreate extends \core\task\scheduled_task {
         } else {
             echo 'Database: ' . $this->get_config('dbtype') . '<br>';
         }
-        if (!$this->get_config('remotetable1')) {
+        if (!$this->get_config('remotetablecatlev')) {
             echo 'Table1 not defined.<br>';
             return 0;
         } else {
             echo 'Table: ' . $this->get_config('remotetablecatlev') . '<br>';
         }
-        if (!$this->get_config('remotetable2')) {
+        if (!$this->get_config('remotetablecats')) {
             echo 'Table1 not defined.<br>';
             return 0;
         } else {
@@ -100,7 +100,7 @@ class categorycreate extends \core\task\scheduled_task {
         } else {
             // Report error if required.
             $extdb->Close();
-            echo 'Error reading data from the external catlevel table<br>';
+            echo 'Error reading data from the external catlevel table, ' . $table . '<br>';
             return 4;
         }
 
@@ -189,7 +189,7 @@ class categorycreate extends \core\task\scheduled_task {
                 } else {
                     // Report error if required.
                     $extdb->Close();
-                    echo 'Error reading data from the external categories table<br>';
+                    echo 'Error reading data from the external categories table, ' . $table .'<br>';
                     return 4;
                 }
             } else {

@@ -120,10 +120,10 @@ if ($hassiteconfig) {
         get_string('settingsheaderremote', 'local_categorycreate'), ''));
 
     // Table name.
-    $settings->add(new admin_setting_configtext('local_categorycreate/remotetable1',
+    $settings->add(new admin_setting_configtext('local_categorycreate/remotetablecatlev',
         get_string('remotetablecatlev', 'local_categorycreate'),
         get_string('remotetablecatlev_desc', 'local_categorycreate'), ''));
-    $settings->add(new admin_setting_configtext('local_categorycreate/remotetable2',
+    $settings->add(new admin_setting_configtext('local_categorycreate/remotetablecats',
         get_string('remotetablecats', 'local_categorycreate'),
         get_string('remotetablecats_desc', 'local_categorycreate'), ''));
 
