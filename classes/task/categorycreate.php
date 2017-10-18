@@ -83,11 +83,11 @@ class categorycreate extends \core\task\scheduled_task {
 
         // EXTERNAL DB - TABLE1: Category levels.
         // Get external table name.
-        $table = $this->get_config('remotetablecatlev');
+        $table1 = $this->get_config('remotetablecatlev');
         $levels = array();
 
         // Read data from table1.
-        $sql = $this->db_get_sql($table, array(), array(), true, "rank");
+        $sql = $this->db_get_sql($table1, array(), array(), true, "rank");
         if ($rs = $extdb->Execute($sql)) {
             if (!$rs->EOF) {
                 while ($fields = $rs->FetchRow()) {
@@ -100,7 +100,7 @@ class categorycreate extends \core\task\scheduled_task {
         } else {
             // Report error if required.
             $extdb->Close();
-            echo 'Error reading data from the external catlevel table, ' . $table . '<br>';
+            echo 'Error reading data from the external catlevel table, ' . $table1 . '<br>';
             return 4;
         }
 
@@ -112,7 +112,7 @@ class categorycreate extends \core\task\scheduled_task {
 
                 // EXTERNAL DB - TABLE2: Categories list.
                 // Get external table name.
-                $table2 = $this->get_config('remotetable2cats');
+                $table2 = $this->get_config('remotetablecats');
 
                 // Read data from table2.
                 $sql2 = $this->db_get_sql_like($table2, array("category_idnumber" => $level), array(), true);
@@ -189,7 +189,7 @@ class categorycreate extends \core\task\scheduled_task {
                 } else {
                     // Report error if required.
                     $extdb->Close();
-                    echo 'Error reading data from the external categories table, ' . $table .'<br>';
+                    echo 'Error reading data from the external categories table, ' . $table2 .'<br>';
                     return 4;
                 }
             } else {
